@@ -1,0 +1,5 @@
+# Custom macros go here
+# Consider creating reusable macros for:
+# - Date parsing across different formats
+# - Currency/amount cleaning
+# - Status normalization

@@ -1,0 +1,34 @@
+# Mart models schema
+# The primary deliverable is fct_sales - a unified sales fact table
+#
+# Expected schema for fct_sales:
+# - sale_id: Unique identifier (source_orderid_lineid)
+# - source_system: 'costco', 'amazon', 'shopify'
+# - source_order_id: Original order ID from source
+# - source_line_id: Line item identifier
+# - order_date: Normalized order date (DATE)
+# - order_timestamp: Full timestamp (TIMESTAMP, nullable for Costco)
+# - customer_id: Customer/member identifier
+# - product_id: SKU/ASIN
+# - product_name: Product description/title
+# - product_category: Category (nullable)
+# - quantity: Units sold (INTEGER)
+# - unit_price: Price per unit (DECIMAL)
+# - gross_amount: quantity * unit_price
+# - discount_amount: Discounts applied
+# - tax_amount: Tax (nullable)
+# - shipping_amount: Shipping cost (nullable)
+# - net_amount: Final amount after discounts
+# - refund_amount: Refund amount (nullable)
+# - ship_country: Shipping country (nullable)
+# - ship_region: State/province (nullable)
+# - ship_city: City (nullable)
+# - payment_method: Payment type
+# - order_status: 'completed', 'cancelled', 'refunded', 'partial_refund', 'pending'
+# - is_cancelled: Boolean flag
+# - is_refunded: Boolean flag
+# - loaded_at: Pipeline load timestamp
+
+version: 2
+
+models: []
