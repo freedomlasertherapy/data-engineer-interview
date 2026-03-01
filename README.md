@@ -63,6 +63,14 @@ Create a `fct_sales` table that unifies all sources with a common schema includi
 
 See `dbt_project/models/marts/_marts.yml` for the full expected schema.
 
+## Prerequisites: GCP Account Required
+
+A personal Google Cloud Platform (GCP) account is required to complete this exercise.
+
+You can create one by signing up with any Gmail address at [cloud.google.com](https://cloud.google.com). If you don't have a Gmail account, you can create one for free at [gmail.com](https://gmail.com).
+
+Once you have a GCP account, **send us your Gmail address** and we will grant you read access to the source data bucket. You can start working on the exercise once access is confirmed.
+
 ## Getting Started
 
 ### Prerequisites
