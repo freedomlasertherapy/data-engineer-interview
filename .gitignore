@@ -24,6 +24,10 @@ data/*.parquet
 data/*.json
 !data/samples/
 
+# Upload tooling (not part of the assignment)
+data/upload/
+data/generate_upload_files.py
+
 # IDE
 .idea/
 .vscode/

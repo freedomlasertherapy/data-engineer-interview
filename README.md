@@ -23,10 +23,10 @@ Each source has a different schema, date format, and data characteristics. Your 
 
 ### GCS Location
 ```
-gs://[BUCKET_NAME]/data-engineer-interview/
-├── costco/costco_sales.csv
-├── amazon/amazon_orders.parquet
-└── shopify/shopify_orders.json
+gs://irestore-data-eng-assignment/data-engineer-interview/
+├── costco/costco_sales.csv          (100k rows, CSV)
+├── amazon/amazon_orders.parquet     (100k rows, Parquet)
+└── shopify/shopify_orders.json      (100k orders, NDJSON)
 ```
 
 ### Local Samples
