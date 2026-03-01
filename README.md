@@ -63,13 +63,26 @@ Create a `fct_sales` table that unifies all sources with a common schema includi
 
 See `dbt_project/models/marts/_marts.yml` for the full expected schema.
 
-## Prerequisites: GCP Account Required
+## Prerequisites
 
-A personal Google Cloud Platform (GCP) account is required to complete this exercise.
+### GCP Account (required)
 
-You can create one by signing up with any Gmail address at [cloud.google.com](https://cloud.google.com). If you don't have a Gmail account, you can create one for free at [gmail.com](https://gmail.com).
+A personal Google Cloud Platform (GCP) account is required to access the source data. GCP is free to sign up.
+
+You can create one by signing up with any Gmail address at [cloud.google.com](https://cloud.google.com). If you don't have a Gmail address, you can create one for free at [gmail.com](https://gmail.com).
 
 Once you have a GCP account, **send us your Gmail address** and we will grant you read access to the source data bucket. You can start working on the exercise once access is confirmed.
+
+### dbt (required)
+
+The transformation layer must be built using **dbt**. dbt is free and open source.
+
+Install it with:
+```bash
+pip install dbt-duckdb
+```
+
+Or follow the official guide at [docs.getdbt.com](https://docs.getdbt.com/docs/core/installation-overview). A dbt project scaffold is already included in the `dbt_project/` folder.
 
 ## Getting Started
 
