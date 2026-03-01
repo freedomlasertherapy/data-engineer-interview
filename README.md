@@ -29,9 +29,6 @@ gs://irestore-data-eng-assignment/data-engineer-interview/
 └── shopify/shopify_orders.json      (100k orders, NDJSON)
 ```
 
-### Local Samples
-Small sample files are included in `data/samples/` for local development and testing.
-
 ### Source Schemas
 
 **Costco (CSV)**
