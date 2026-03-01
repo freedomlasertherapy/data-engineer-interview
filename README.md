@@ -15,7 +15,7 @@ Your company has sales data from three different retail channels:
 
 Each source has a different schema, date format, and data characteristics. Your task is to:
 
-1. **Ingest** the data from GCS (or use local samples for development)
+1. **Ingest** the data from GCS
 2. **Transform** the data using dbt
 3. **Produce** a unified `fct_sales` fact table
 
@@ -80,43 +80,6 @@ pip install dbt-duckdb
 ```
 
 Or follow the official guide at [docs.getdbt.com](https://docs.getdbt.com/docs/core/installation-overview). A dbt project scaffold is already included in the `dbt_project/` folder.
-
-## Getting Started
-
-### Prerequisites
-- Docker and Docker Compose
-- (Optional) Python 3.11+ for local development
-
-### Quick Start
-
-1. Start the development environment:
-   ```bash
-   docker-compose up -d
-   ```
-
-2. Access Jupyter Lab at http://localhost:8888 (token: `interview`)
-
-3. Run dbt:
-   ```bash
-   docker-compose exec dbt bash
-   dbt debug  # Verify connection
-   dbt run    # Run models
-   ```
-
-### Local Development (without Docker)
-
-```bash
-# Create virtual environment
-python -m venv venv
-source venv/bin/activate
-
-# Install dependencies
-pip install dbt-duckdb pandas pyarrow
-
-# Run dbt
-cd dbt_project
-dbt run
-```
 
 ## Deliverables
 
