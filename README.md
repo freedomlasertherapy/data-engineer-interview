@@ -72,14 +72,16 @@ Once you have a GCP account, **send us your Gmail address** and we will grant yo
 
 ### dbt (required)
 
-The transformation layer must be built using **dbt**. dbt is free and open source.
+The transformation layer must be built using **dbt**. There are two free options:
 
-Install it with:
-```bash
-pip install dbt-duckdb
-```
+- **dbt Cloud** – browser-based IDE, free for a single user. Sign up at [cloud.getdbt.com](https://cloud.getdbt.com).
+- **dbt Core** – open source, runs locally. Install with:
+  ```bash
+  pip install dbt-duckdb
+  ```
+  Full installation guide: [docs.getdbt.com](https://docs.getdbt.com/docs/core/installation-overview).
 
-Or follow the official guide at [docs.getdbt.com](https://docs.getdbt.com/docs/core/installation-overview). A dbt project scaffold is already included in the `dbt_project/` folder.
+A dbt project scaffold is already included in the `dbt_project/` folder.
 
 ## Deliverables
 
