@@ -1,5 +1,19 @@
 # Data Engineering Take-Home Assessment
 
+## About iRESTORE
+
+iRESTORE is a fast-growing company dedicated to providing innovative solutions in the wellness and beauty space. Our mission is to restore confidence by delivering safe and effective solutions that improve health and beauty.
+
+As we continue to scale, we are looking for a Data Engineer who will help lead and optimize our BI stack — from data warehouse infrastructure to modeling, reporting, and AI — enabling data-informed decision-making across the company.
+
+## About the Position
+
+iRESTORE is seeking a highly skilled and hands-on Data Engineer to lead the design, implementation, and optimization of our business intelligence infrastructure.
+
+This role will oversee our full BI stack — from our data warehouse (BigQuery), through data modeling and transformation, to reporting and visualization — and will eventually support advanced analytics and modeling capabilities.
+
+We're looking for a strategic, execution-focused team player who can bridge deep technical expertise with business understanding. You will work closely with teams across Marketing, Operations, Customer Experience, and Creative to build scalable data solutions that unlock growth opportunities, optimize performance, and improve customer satisfaction.
+
 ## Overview
 
 You've been asked to build a data pipeline that unifies sales data from three different retail sources into a single analytical fact table.
