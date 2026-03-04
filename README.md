@@ -120,6 +120,21 @@ You will be evaluated on:
 - Think about data type consistency across sources
 - The data has some quality issues (by design) - handle them appropriately
 
+## Submission
+
+The expected deliverable is a dashboard presenting sales performance broken down by stores, along with the supporting files and documentation that demonstrate the full data workflow.
+
+Your submission should include:
+- A dashboard that clearly presents sales metrics and allows exploration by store and other relevant dimensions
+- The data transformation logic used to prepare the dataset (SQL queries, models, or scripts)
+- Any supporting files or documentation that illustrate the data pipeline and how the data flows from the raw source to the final dashboard
+- Clear assumptions, explanations, and notes about how the analysis was performed
+- A short summary of insights or observations you can derive from the data
+
+The goal of this exercise is not only to evaluate the final dashboard, but also to understand how you structure data work end-to-end — from raw data to a clear analytical output.
+
+That said, please use AI tools thoughtfully and responsibly. You are expected to understand, validate, and be able to explain the analysis and conclusions you present.
+
 ## Questions?
 
 If you have questions about the requirements, please reach out to your interviewer.
