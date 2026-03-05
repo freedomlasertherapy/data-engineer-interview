@@ -1,24 +1,46 @@
-# Staging models schema
-# This is where you define your staging models and their tests
-#
-# Example structure:
-# version: 2
-#
-# models:
-#   - name: stg_costco_sales
-#     description: "Staged Costco sales data"
-#     columns:
-#       - name: transaction_id
-#         description: "Unique transaction identifier"
-#         tests:
-#           - not_null
-#
-#   - name: stg_amazon_orders
-#     description: "Staged Amazon orders data"
-#
-#   - name: stg_shopify_orders
-#     description: "Staged Shopify orders data"
-
 version: 2
 
-models: []
+models:
+  - name: stg_costco_sales
+    description: "Staged Costco sales data — deduplicated, dollar signs stripped, types cast"
+    columns:
+      - name: transaction_id
+        description: "Unique transaction identifier"
+        tests:
+          - not_null
+      - name: sku
+        description: "Product SKU"
+        tests:
+          - not_null
+      - name: unit_price
+        description: "Unit price as decimal"
+        tests:
+          - not_null
+
+  - name: stg_amazon_orders
+    description: "Staged Amazon orders data — timestamps parsed, types cast"
+    columns:
+      - name: order_id
+        description: "Amazon order identifier"
+        tests:
+          - not_null
+      - name: order_status
+        description: "Order status: Shipped, Cancelled, Returned, Pending"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['Shipped', 'Cancelled', 'Returned', 'Pending']
+
+  - name: stg_shopify_orders
+    description: "Staged Shopify orders — line items unnested, timestamps parsed"
+    columns:
+      - name: order_id
+        description: "Shopify order identifier"
+        tests:
+          - not_null
+      - name: financial_status
+        description: "Financial status of the order"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['paid', 'partially_refunded', 'refunded', 'pending', 'voided']

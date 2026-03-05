@@ -31,4 +31,44 @@
 
 version: 2
 
-models: []
+models:
+  - name: fct_sales
+    description: "Unified sales fact table across all retail channels"
+    columns:
+      - name: sale_id
+        description: "Unique identifier (source_orderid_lineid)"
+        tests:
+          - unique
+          - not_null
+      - name: source_system
+        description: "Source channel: costco, amazon, or shopify"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['costco', 'amazon', 'shopify']
+      - name: source_order_id
+        description: "Original order ID from source system"
+        tests:
+          - not_null
+      - name: order_date
+        description: "Normalized order date"
+        tests:
+          - not_null
+      - name: quantity
+        description: "Units sold"
+        tests:
+          - not_null
+      - name: unit_price
+        description: "Price per unit"
+        tests:
+          - not_null
+      - name: net_amount
+        description: "Final amount after discounts"
+        tests:
+          - not_null
+      - name: order_status
+        description: "Normalized order status"
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['completed', 'cancelled', 'refunded', 'partial_refund', 'pending']

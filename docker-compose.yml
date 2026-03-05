@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   # DuckDB runs embedded, but we provide a Jupyter environment for exploration
   jupyter:
@@ -15,7 +13,7 @@ services:
       - JUPYTER_TOKEN=interview
     command: >
       bash -c "
-        pip install --quiet jupyterlab duckdb dbt-duckdb pandas pyarrow &&
+        pip install --quiet jupyterlab duckdb dbt-duckdb pandas pyarrow plotly &&
         jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='interview'
       "
 

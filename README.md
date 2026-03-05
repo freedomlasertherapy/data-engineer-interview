@@ -91,6 +91,8 @@ This starts two services:
 
 Both services share the `./data` directory and the DuckDB database, so your dbt models are immediately queryable from Jupyter.
 
+**Note:** You'll need to download the source data from GCS into `./data/` before running dbt. How you do this is up to you (e.g., `gsutil`, DuckDB's `httpfs`, Python, etc.).
+
 ### Without Docker
 
 If you prefer to work locally:
