@@ -36,10 +36,10 @@ Your task is to:
 The source data is publicly available in Google Cloud Storage — no authentication required.
 
 ```
-gs://<TODO: UPDATE BUCKET NAME>/
-├── costco/costco_sales.csv          (CSV)
-├── amazon/amazon_orders.parquet     (Parquet)
-└── shopify/shopify_orders.json      (NDJSON)
+gs://irestore-data-eng-assignment/
+├── costco_sales.csv          (CSV)
+├── amazon_orders.parquet     (Parquet)
+└── shopify_orders.json       (NDJSON)
 ```
 
 ### Source Schemas
