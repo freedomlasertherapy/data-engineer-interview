@@ -1,0 +1,24 @@
+# Staging models schema
+# This is where you define your staging models and their tests
+#
+# Example structure:
+# version: 2
+#
+# models:
+#   - name: stg_costco_sales
+#     description: "Staged Costco sales data"
+#     columns:
+#       - name: transaction_id
+#         description: "Unique transaction identifier"
+#         tests:
+#           - not_null
+#
+#   - name: stg_amazon_orders
+#     description: "Staged Amazon orders data"
+#
+#   - name: stg_shopify_orders
+#     description: "Staged Shopify orders data"
+
+version: 2
+
+models: []

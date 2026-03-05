@@ -1,0 +1,16 @@
+sales_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /app/data/sales.duckdb
+      # Extensions for reading from GCS/S3 and various file formats
+      extensions:
+        - httpfs
+        - parquet
+        - json
+      # Optional: Configure GCS access
+      # settings:
+      #   s3_region: auto
+      #   s3_access_key_id: "{{ env_var('GCS_ACCESS_KEY') }}"
+      #   s3_secret_access_key: "{{ env_var('GCS_SECRET_KEY') }}"

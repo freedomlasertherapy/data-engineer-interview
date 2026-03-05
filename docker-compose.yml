@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  # DuckDB runs embedded, but we provide a Jupyter environment for exploration
+  jupyter:
+    image: python:3.11-slim
+    container_name: data-eng-jupyter
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - ./data:/app/data
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_TOKEN=interview
+    command: >
+      bash -c "
+        pip install --quiet jupyterlab duckdb dbt-duckdb pandas pyarrow &&
+        jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='interview'
+      "
+
+  # dbt service for running transformations
+  dbt:
+    image: python:3.11-slim
+    container_name: data-eng-dbt
+    working_dir: /app/dbt_project
+    volumes:
+      - ./:/app
+      - ./data:/app/data
+    environment:
+      - DBT_PROFILES_DIR=/app/dbt_project
+    entrypoint: >
+      bash -c "
+        pip install --quiet dbt-duckdb &&
+        exec bash
+      "
+    stdin_open: true
+    tty: true
+
+volumes:
+  duckdb-data:

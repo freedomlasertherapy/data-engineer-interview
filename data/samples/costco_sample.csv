@@ -1,0 +1,7 @@
+transaction_id,member_id,member_tier,purchase_date,store_location,product_sku,product_description,case_quantity,unit_price_per_case,total_amount,payment_method,cashier_id
+TXN00000001,M0000000001,Executive,01/15/2024,Warehouse #101 - Los Angeles,KC-001,Kirkland Signature Olive Oil 2L,2,$24.99,$49.98,Costco Visa,EMP1234
+TXN00000001,M0000000001,Executive,01/15/2024,Warehouse #101 - Los Angeles,KC-004,Rotisserie Chicken,1,$4.99,$4.99,Costco Visa,EMP1234
+TXN00000002,,,,01/16/2024,Warehouse #201 - Houston,KC-002,Kirkland Signature Toilet Paper 30-pack,1,$22.99,$22.99,Cash,EMP5678
+TXN00000003,M0000000002,Gold,01/17/2024,Warehouse #301 - Chicago,KC-005,Kirkland Signature Coffee 3lb,3,$18.99,$56.97,Credit Card,EMP9012
+TXN00000003,M0000000002,Gold,01/17/2024,Warehouse #301 - Chicago,KC-006,Organic Eggs 24-pack,2,$8.49,$16.98,Credit Card,EMP9012
+TXN00000003,M0000000002,Gold,01/17/2024,Warehouse #301 - Chicago,KC-010,Kirkland Signature Laundry Detergent,1,$16.99,$16.99,Credit Card,EMP9012
