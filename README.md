@@ -16,7 +16,7 @@ We're looking for a strategic, execution-focused team player who can bridge deep
 
 You've been asked to build a data pipeline that unifies sales data from three different retail sources into a single analytical fact table, and to present the results in a dashboard.
 
-**Time expectation:** This task is designed to take approximately 1 hour of focused work.
+**Time expectation:** This task is designed to take approximately 2 hours of focused work.
 
 The data comes from three retail channels, each with a different schema, date format, and data characteristics:
 - **Costco** — Warehouse club sales (CSV)
@@ -31,12 +31,15 @@ Your task is to:
 
 ## Data Sources
 
-### GCS Location
+### Location
+
+The source data is publicly available in Google Cloud Storage — no authentication required.
+
 ```
-gs://irestore-data-eng-assignment/data-engineer-interview/
-├── costco/costco_sales.csv          (100k rows, CSV)
-├── amazon/amazon_orders.parquet     (100k rows, Parquet)
-└── shopify/shopify_orders.json      (100k orders, NDJSON)
+gs://<TODO: UPDATE BUCKET NAME>/
+├── costco/costco_sales.csv          (CSV)
+├── amazon/amazon_orders.parquet     (Parquet)
+└── shopify/shopify_orders.json      (NDJSON)
 ```
 
 ### Source Schemas
@@ -70,24 +73,31 @@ The target data model is a `fct_sales` table that unifies all sources with a con
 
 See `dbt_project/models/marts/_marts.yml` for the full expected schema.
 
-## Prerequisites
+## Getting Started
 
-### GCP Account
+A `docker-compose.yml` is included with everything you need:
 
-A personal Google Cloud Platform (GCP) account is required to access the source data. GCP is free to sign up — you can create one with any Gmail address at [cloud.google.com](https://cloud.google.com).
+```bash
+docker compose up
+```
 
-Once you have a GCP account, **send us your Gmail address** and we will grant you read access to the source data bucket.
-
-### dbt
-
-The transformation layer must be built using **dbt**. There are two free options:
-
-- **dbt Cloud** — browser-based IDE, free for a single user. Sign up at [cloud.getdbt.com](https://cloud.getdbt.com).
-- **dbt Core** — open source, runs locally. Install with:
+This starts two services:
+- **Jupyter Lab** — available at `http://localhost:8888` (token: `interview`). Use this for data exploration and your dashboard.
+- **dbt** — a container with `dbt-duckdb` pre-installed. Run transformations with:
   ```bash
-  pip install dbt-duckdb
+  docker compose exec dbt bash
+  dbt run
   ```
-  Full installation guide: [docs.getdbt.com](https://docs.getdbt.com/docs/core/installation-overview).
+
+Both services share the `./data` directory and the DuckDB database, so your dbt models are immediately queryable from Jupyter.
+
+### Without Docker
+
+If you prefer to work locally:
+
+```bash
+pip install dbt-duckdb jupyterlab duckdb pandas pyarrow
+```
 
 A dbt project scaffold is already included in the `dbt_project/` folder.
 
@@ -102,7 +112,7 @@ Your submission should include:
 
 The goal of this exercise is not only to evaluate the final dashboard, but also to understand how you structure data work end-to-end — from raw data to a clear analytical output.
 
-Please use AI tools thoughtfully and responsibly. You are expected to understand, validate, and be able to explain the analysis and conclusions you present.
+You may use AI tools. Be prepared to explain and walk through your work in a follow-up conversation.
 
 ### Bonus (Optional)
 - Add dbt tests (generic and/or custom)
